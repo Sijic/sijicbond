@@ -17,6 +17,7 @@
   position: absolute;
   top: -50px; /* Поднимаем огонь вверх - убедитесь, что добавили единицу измерения */
   left: 0%;
+  z-index: 999;
   transform: translateX(-40%); /* Центрируем огонь по горизонтали */
   width: 700%;
   height: 700%;
@@ -39,7 +40,7 @@
   top: 100%; /* Выравнивание по вертикали */
   left: 50%; /* Выравнивание по горизонтали */
   transform: translate(-50%, -50%); /* Центрируем видео относительно своего центра */
-z-index: -5; /* Ставим видео на задний план */
+z-index: 0; /* Ставим видео на задний план */
   width: 20vw; /* Ширина, чтобы охватить весь экран */
   height: 30vh; /* Высота, чтобы охватить весь экран */
   object-fit: cover; /* Масштабируем видео, чтобы покрыть весь экран, сохраняя пропорции */
@@ -51,7 +52,7 @@ z-index: -5; /* Ставим видео на задний план */
   top: 5%; /* Выравнивание по вертикали */
   left: 50%; /* Выравнивание по горизонтали */
   transform: translate(-50%, -50%); /* Центрируем видео относительно своего центра */
-z-index: 1000; /* Ставим видео на задний план */
+z-index: -100; /* Ставим видео на задний план */
   width: 20vw; /* Ширина, чтобы охватить весь экран */
   height: 30vh; /* Высота, чтобы охватить весь экран */
   object-fit: cover; /* Масштабируем видео, чтобы покрыть весь экран, сохраняя пропорции */
@@ -109,9 +110,11 @@ z-index: 1000; /* Ставим видео на задний план */
     width: 20vw; /* Уменьшаем ширину видео на смартфонах */
     height: 30vh; /* Высота, чтобы охватить весь экран */
     object-fit: cover; /* Масштабируем видео, чтобы покрыть весь экран, сохраняя пропорции */
-    z-index: 999; /* Ставим видео на задний план */
+    z-index: -1000; /* Ставим видео на задний план */
   }
 }
+
+
 
 <style>
   .tnb-simple-reveal {
@@ -137,6 +140,116 @@ z-index: 1000; /* Ставим видео на задний план */
   gap: 5px; /* Расстояние между иконками */
   z-index: 1000;
 }
+
+.tnb-container {
+    background-color: #000; /* Черный фон */
+    color: #fff; /* Белый текст для контраста */
+}
+
+.tnb-section.tnb-top {
+  background-color: black;
+  color: white;
+}
+
+.tnb-nav {
+  background-color: black;
+  transform: scaleX(1.01) scaleY(1.05); /* Увеличиваем ширину и высоту */
+  transform-origin: right top; /* Растягиваем от правого верхнего угла */
+}
+
+
+.tnb-product-card {
+  width: 300px; /* Ширина блока, можно настроить по желанию */
+  height: 450px; /* Высота блока, также настраиваемая */
+ 
+ 
+  background-position: center center; /* Центрируем изображение */
+  background-repeat: no-repeat; /* Не повторять изображение */
+  padding: 0px; /* Отступы для удобства */
+  position: relative; /* Чтобы другие элементы могли правильно позиционироваться относительно этого блока */
+  border-radius: 8px; /* Скругление углов, если нужно */
+}
+
+.tnb-product-card .tnb-product-card-top {
+  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для улучшения контраста */
+  padding: 10px;
+}
+
+.tnb-product-card .tnb-product-card-content {
+  position: absolute; /* Это важно для того, чтобы текст оставался на переднем плане */
+  bottom: 45px; /* Позиционируем текст ближе к низу */
+  left: 60px;
+  color: white; /* Белый текст для контраста с фоном */
+  z-index: 1; /* Обеспечиваем, чтобы текст был поверх изображения */
+}
+
+.tnb-product-card .tnb-product-card-content h2,
+.tnb-product-card .tnb-product-card-content p {
+  margin: 100; /* Убираем отступы у текста */
+  color: white; 
+}
+
+.tnb-product-card .tnb-product-button-wrap {
+  position: absolute; /* Это важно для размещения кнопок внизу */
+  bottom: 10px; /* Кнопки будут внизу блока */
+  left: 20px; /* Можно настроить отступ слева */
+  z-index: 1; /* Это также оставит кнопки на переднем плане */
+}
+
+
+.tnb-home-hero-vid {
+    transform: translate3d(0px, 0vh, 0px);
+}
+
+.tnb-home-hero-wrap {
+    transform: translate3d(0px, -15vh, 0px);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 200%; /* Убедитесь, что корневые элементы занимают всю высоту */
+}
+
+
+.tnb-video {
+    display: block; /* Убедитесь, что видео отображается */
+}
+
+.tnb-video-view-player {
+    max-width: 2400px; /* Ограничивает ширину */
+    max-height: 1020px; /* Ограничивает высоту */
+    margin: 0 auto; /* Центрирует контейнер */
+}
+
+<style>
+  .tnb-h-medium span {
+    font-size: 5vw; /* 5% от ширины экрана */
+  }
+
+  @media (max-width: 768px) {
+    .tnb-h-medium span {
+      font-size: 8vw; /* на устройствах с шириной экрана менее 768px шрифт будет 8% от ширины */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .tnb-h-medium span {
+      font-size: 10vw; /* на устройствах с шириной экрана менее 480px шрифт будет 10% от ширины */
+    }
+  }
+
+.g8-spline-cloud canvas {
+    width: 100%;
+    height: auto; /* Высота будет рассчитываться автоматически */
+    display: block;
+}
+.g8-spline-cloud {
+    width: 100%;
+    height: 100vh; /* Или другая высота, например, 100% для всей страницы */
+    position: relative;
+}
+
 </style>
 
 <div data-is-ix2-target="1" class="tnb-simple-reveal" style="transform: translate3d(0em, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
