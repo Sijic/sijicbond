@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка и отображение текста из Word</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script> <!-- Подключаем библиотеку mammoth.js -->
+</head>
+<body>
+    <h1>Загрузите свой документ Word</h1>
+
+    <!-- Инпут для загрузки файла -->
+    <input type="file" id="upload" accept=".docx" />
+
+    <!-- Здесь будет отображаться извлечённый текст -->
+    <div id="output"></div>
+
+    <script>
+        // Слушаем событие изменения файла
+        document.getElementById('upload').addEventListener('change', function(event) {
+            var reader = new FileReader();  // Создаём объект FileReader для чтения файла
+            
+            // Когда файл загружен
+            reader.onload = function(e) {
+                var arrayBuffer = e.target.result;  // Получаем результат чтения файла
+
+                // Используем библиотеку Mammoth для конвертации в HTML
+                mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
+                    .then(function(result) {
+                        document.getElementById('output').innerHTML = result.value;  // Выводим результат в div#output
+                    })
+                    .catch(function(err) {
+                        console.error(err);  // Обработка ошибок
+                    });
+            };
+
+            reader.readAsArrayBuffer(this.files[0]);  // Читаем выбранный файл как ArrayBuffer
+        });
+    </script>
+</body>
+</html>
