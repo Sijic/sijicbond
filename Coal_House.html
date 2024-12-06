@@ -3,53 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Отображение текста из Word</title>
+    <title>Загрузка и отображение текста из Word</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script> <!-- Подключаем библиотеку mammoth.js -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f5f5f5;
-        }
-
-        #content {
-            width: 80%;
-            max-width: 1200px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-    </style>
 </head>
 <body>
+    <h1>Текст из документа Word</h1>
 
-    <div id="content"></div>
+    <!-- Здесь будет отображаться извлечённый текст -->
+    <div id="output"></div>
 
     <script>
-        // URL документа Word
-        var docUrl = 'Coal_house.docx; // Замените на вашу ссылку
+        // Указываем ссылку на файл Word в репозитории (или другом месте)
+        var docUrl = 'Coal_house.docx'; // Замените на вашу ссылку
 
-        // Функция для загрузки и отображения текста из документа
+        // Загружаем документ из URL
         fetch(docUrl)
-            .then(response => response.arrayBuffer())  // Загружаем документ как ArrayBuffer
+            .then(response => response.arrayBuffer())  // Загружаем файл как ArrayBuffer
             .then(arrayBuffer => {
                 // Используем библиотеку Mammoth для конвертации в HTML
                 return mammoth.convertToHtml({ arrayBuffer: arrayBuffer });
             })
             .then(result => {
                 // Вставляем извлечённый HTML в контейнер
-                document.getElementById('content').innerHTML = result.value;
+                document.getElementById('output').innerHTML = result.value;
             })
             .catch(err => {
                 console.error("Ошибка при загрузке или обработке документа:", err);
-                document.getElementById('content').innerHTML = "Не удалось загрузить документ.";
+                document.getElementById('output').innerHTML = "Не удалось загрузить документ.";
             });
     </script>
-
 </body>
 </html>
