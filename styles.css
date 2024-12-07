@@ -158,52 +158,7 @@ z-index: -100; /* Ставим видео на задний план */
 }
 
 
-.tnb-product-card {
-  width: 300px; /* Ширина блока, можно настроить по желанию */
-  height: 450px; /* Высота блока, также настраиваемая */
- 
- 
-  background-position: center center; /* Центрируем изображение */
-  background-repeat: no-repeat; /* Не повторять изображение */
-  padding: 0px; /* Отступы для удобства */
-  position: relative; /* Чтобы другие элементы могли правильно позиционироваться относительно этого блока */
-  border-radius: 8px; /* Скругление углов, если нужно */
-}
 
-.tnb-product-card .tnb-product-card-top {
-  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для улучшения контраста */
-  padding: 10px;
-}
-
-.tnb-product-card .tnb-product-card-content {
-  position: absolute; /* Это важно для того, чтобы текст оставался на переднем плане */
-  bottom: 45px; /* Позиционируем текст ближе к низу */
-  left: 60px;
-  color: white; /* Белый текст для контраста с фоном */
-  z-index: 1; /* Обеспечиваем, чтобы текст был поверх изображения */
-}
-
-.tnb-product-card .tnb-product-card-content h2,
-.tnb-product-card .tnb-product-card-content p {
-  margin: 100; /* Убираем отступы у текста */
-  color: white; 
-}
-
-.tnb-product-card .tnb-product-button-wrap {
-  position: absolute; /* Это важно для размещения кнопок внизу */
-  bottom: 10px; /* Кнопки будут внизу блока */
-  left: 20px; /* Можно настроить отступ слева */
-  z-index: 1; /* Это также оставит кнопки на переднем плане */
-}
-
-
-.tnb-home-hero-vid {
-    transform: translate3d(0px, 0vh, 0px);
-}
-
-.tnb-home-hero-wrap {
-    transform: translate3d(0px, -15vh, 0px);
-}
 
 
 
