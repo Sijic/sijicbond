@@ -205,22 +205,6 @@ z-index: -100; /* Ставим видео на задний план */
     transform: translate3d(0px, -15vh, 0px);
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 200%; /* Убедитесь, что корневые элементы занимают всю высоту */
-}
-
-
-.tnb-video {
-    display: block; /* Убедитесь, что видео отображается */
-}
-
-.tnb-video-view-player {
-    max-width: 2400px; /* Ограничивает ширину */
-    max-height: 1020px; /* Ограничивает высоту */
-    margin: 0 auto; /* Центрирует контейнер */
-}
 
 
 #tnb-video-view {
