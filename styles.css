@@ -222,39 +222,6 @@ body, html {
     margin: 0 auto; /* Центрирует контейнер */
 }
 
-<style>
-  .tnb-h-medium span {
-    font-size: 5vw; /* 5% от ширины экрана */
-  }
-
-  @media (max-width: 768px) {
-    .tnb-h-medium span {
-      font-size: 8vw; /* на устройствах с шириной экрана менее 768px шрифт будет 8% от ширины */
-    }
-  }
-
-  @media (max-width: 480px) {
-    .tnb-h-medium span {
-      font-size: 10vw; /* на устройствах с шириной экрана менее 480px шрифт будет 10% от ширины */
-    }
-  }
-
-.g8-spline-cloud canvas {
-    width: 100%;
-    height: auto; /* Высота будет рассчитываться автоматически */
-    display: block;
-}
-.g8-spline-cloud {
-    width: 100%;
-    height: 100vh; /* Или другая высота, например, 100% для всей страницы */
-    position: relative;
-}
-
-.tnb-play-wrap,
-.tnb-play-icon,
-.close-btn {
-  cursor: pointer !important; /* Обязательно указываем !important для принудительного применения */
-}
 
 #tnb-video-view {
     max-width: 100%; /* Устанавливаем максимальную ширину 100% */
