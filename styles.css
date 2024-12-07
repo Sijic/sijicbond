@@ -256,6 +256,10 @@ body, html {
   cursor: pointer !important; /* Обязательно указываем !important для принудительного применения */
 }
 
+h2 {
+    font-size: calc(2vw + 10px); /* Размер шрифта адаптируется к ширине окна */
+}
+
 </style>
 
 <div data-is-ix2-target="1" class="tnb-simple-reveal" style="transform: translate3d(0em, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
