@@ -260,6 +260,11 @@ h2 {
     font-size: calc(2vw + 10px); /* Размер шрифта адаптируется к ширине окна */
 }
 
+body {
+    max-width: 100%;
+    overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+}
+
 </style>
 
 <div data-is-ix2-target="1" class="tnb-simple-reveal" style="transform: translate3d(0em, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
