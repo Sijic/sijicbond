@@ -62,7 +62,7 @@ z-index: -100; /* Ставим видео на задний план */
 .tnb-social-links {
   position: absolute;
   top: 90%;
-  left: 50%;
+  
   transform: translate(-50%, -50%);
   display: flex;
   flex-wrap: wrap;
@@ -168,6 +168,19 @@ z-index: -100; /* Ставим видео на задний план */
     object-fit: contain; /* Подстраиваем видео под размер экрана */
 }
 
+.tnb-nav-left {
+    position: relative;
+    left: 20%;
+}
+
+.tnb-nav-content {
+    position: relative;
+    left: -20%;
+}
+.tnb-home-hero-float-5 {
+   
+    left: 70%;
+}
 
 
 </style>
