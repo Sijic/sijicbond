@@ -101,7 +101,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="tnb-section"><div class="tnb-spacer-medium"></div><div class="tnb-product-cards" style="padding: 0 20px;">
 <div class="tnb-product-card">
   <div class="tnb-product-card-top">
-    <div class="tnb-p-legal no-margin tnb-color-slate" style="color: white; font-size: 1rem; font-weight: bold; text-align: center;">2024&nbsp;&nbsp;&nbsp;&nbsp;AIRBA FRESH. Production designer. Two commercials.</div>
+    <div class="tnb-p-legal no-margin tnb-color-slate" 
+	style="color: white; font-size: 1rem; font-weight: bold; text-align: center;">2024&nbsp;&nbsp;&nbsp;&nbsp;AIRBA FRESH. Production designer. Two commercials.</div>
   </div>
   <a href="#" class="tnb-product-mid w-inline-block" id="changeImageLink"  style="background-image: url('https://media.githubusercontent.com/media/Sijic/sijicbond/master/airba.png'); background-size: cover; background-position: center center;">
     <div class="tnb-product-card-content">
@@ -135,13 +136,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="tnb-product-card">
   <div class="tnb-product-card-top">
-    <div class="tnb-p-legal no-margin tnb-color-slate">2024</div>
+    <div class="tnb-p-legal no-margin tnb-color-slate"
+	 style="color: white; font-size: 1rem; font-weight: bold; text-align: center;">2024&nbsp;&nbsp;&nbsp;&nbsp;TECHNODOM. Production designer. Four commercials.</div>
   </div>
   <a href="topaz-video-ai" class="tnb-product-mid w-inline-block" style="background-image: url('https://media.githubusercontent.com/media/Sijic/sijicbond/master/texno.jpg'); background-size: cover; background-position: center center;">
     <div class="tnb-product-card-content">
       <h2 class="tnb-h-medium bot-m--75rem" style="display: inline-block; text-align: center;">
-        TECHNODOM<br>Four commercials.<br>
-Production designer<br><br><br><br><br><br><br><br><br><span class="tnb-tm-super"></span><span class="tnb-color-green"></span>
+        <br><br><br><br><br><br><br><br><br><span class="tnb-tm-super"></span><span class="tnb-color-green"></span>
       </h2>
       <p class="tnb-p-medium tnb-color-slate text-wrap-balance no-margin">
 
@@ -152,6 +153,20 @@ Production designer<br><br><br><br><br><br><br><br><br><span class="tnb-tm-super
     <div class="button-fill"></div>
     <div class="button-fill"></div>
   </div>
+  <script>
+  // Находим ссылку по ID
+  const changeImageLink = document.getElementById('changeImageLink');
+
+  // Добавляем обработчик клика
+  changeImageLink.addEventListener('click', function(event) {
+    // Останавливаем переход по ссылке
+    event.preventDefault();
+
+    // Меняем фоновое изображение
+    changeImageLink.style.backgroundImage = "url('https://media.githubusercontent.com/media/Sijic/sijicbond/master/fresh.gif')";
+  });
+</script>
+  
 </div>
 <div class="tnb-product-card">
   <div class="tnb-product-card-top">
