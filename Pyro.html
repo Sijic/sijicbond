@@ -809,44 +809,42 @@ data-spline-url="https://prod.spline.design/LZXdWB9X3JqTgtd6/scene.splinecode">
 </div>
 
 <script>
-  // Объект с GIF-анимациями и исходными фонами для карточек
-  const cardData = {
-    },
-	 card3: {
-      gif: 'https://media.githubusercontent.com/media/Sijic/sijicbond/master/scrach.gif',
-      default: 'https://media.githubusercontent.com/media/Sijic/sijicbond/master/Skreb.jpg',
-    },
-	card4: {
-      gif: 'https://media.githubusercontent.com/media/Sijic/sijicbond/master/rushud.png',
-      default: 'https://media.githubusercontent.com/media/Sijic/sijicbond/master/enghud.png',
-    },
-    // Добавьте остальные карточки
-  };
+ const cardData = {
+  card3: {
+    gif: 'https://media.githubusercontent.com/media/Sijic/sijicbond/master/scrach.gif',
+    default: 'https://media.githubusercontent.com/media/Sijic/sijicbond/master/Skreb.jpg',
+  },
+  card4: {
+    gif: 'https://media.githubusercontent.com/media/Sijic/sijicbond/master/rushud.png',
+    default: 'https://media.githubusercontent.com/media/Sijic/sijicbond/master/enghud.png',
+  },
+};
 
-  let activeCard = null; // Отслеживает текущую активную карточку
+let activeCard = null; // Отслеживает текущую активную карточку
 
-  // Перебираем все карточки
-  for (const [cardId, { gif, default: defaultImage }] of Object.entries(cardData)) {
-    const cardElement = document.getElementById(cardId);
+// Перебираем все карточки
+for (const [cardId, { gif, default: defaultImage }] of Object.entries(cardData)) {
+  const cardElement = document.getElementById(cardId);
 
-    if (cardElement) {
-      // Добавляем обработчик клика
-      cardElement.addEventListener('click', function (event) {
-        event.preventDefault(); // Останавливаем переход по ссылке
+  if (cardElement) {
+    // Добавляем обработчик клика
+    cardElement.addEventListener('click', function (event) {
+      event.preventDefault(); // Останавливаем переход по ссылке
 
-        // Если уже есть активная карточка, сбросить её фон
-        if (activeCard && activeCard !== cardElement) {
-          activeCard.style.backgroundImage = `url('${cardData[activeCard.id].default}')`;
-        }
+      // Если уже есть активная карточка, сбросить её фон
+      if (activeCard && activeCard !== cardElement) {
+        activeCard.style.backgroundImage = `url('${cardData[activeCard.id].default}')`;
+      }
 
-        // Устанавливаем новый фон для текущей карточки
-        cardElement.style.backgroundImage = `url('${gif}')`;
+      // Устанавливаем новый фон для текущей карточки
+      cardElement.style.backgroundImage = `url('${gif}')`;
 
-         // Сохраняем текущую активную карточку
-        activeCard = cardElement;
-      });
-    }
+      // Сохраняем текущую активную карточку
+      activeCard = cardElement;
+    });
   }
+}
+
 </script>
 
  </div></div>
