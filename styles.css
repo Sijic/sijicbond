@@ -35,6 +35,16 @@
   margin-left: 10px; /* Смещение SVG вправо */
 }
 
+.tnb-home-hero-float-5 {
+  position: absolute; /* Позиционируем элемент относительно ближайшего родителя с position */
+  top: 100%; /* Выравнивание по вертикали */
+  left: 50%; /* Выравнивание по горизонтали */
+  transform: translate(-50%, -50%); /* Центрируем видео относительно своего центра */
+z-index: 0; /* Ставим видео на задний план */
+  width: 20vw; /* Ширина, чтобы охватить весь экран */
+  height: 30vh; /* Высота, чтобы охватить весь экран */
+  object-fit: cover; /* Масштабируем видео, чтобы покрыть весь экран, сохраняя пропорции */
+}
 
 
 
@@ -61,7 +71,10 @@
     height: 10px;
   }
 
- 
+  .tnb-home-hero-float-5 {
+    width: 10vw; /* Уменьшаем ширину видео на планшетах */
+  }
+}
 
  .tnb-home-hero-float-6 {
     width: 30vw; /* Уменьшаем ширину видео на планшетах */
@@ -74,7 +87,10 @@
     height: 1px;
   }
 
- 
+  .tnb-home-hero-float-5 {
+    width: 2vw; /* Уменьшаем ширину видео на смартфонах */
+  }
+}
 
 .tnb-home-hero-float-6 {
     top: 5%; /* Выравнивание по вертикали */
@@ -107,27 +123,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  flex-wrap: nowrap; /* Убираем перенос на новую строку */
+  flex-wrap: wrap;
   justify-content: center;
   gap: 5px; /* Расстояние между иконками */
   z-index: 1000;
 }
-@media screen and (max-width: 768px) {
-  .tnb-social-links-1 {
-    flex-wrap: nowrap; /* Отключаем перенос на новую строку, иконки должны быть в ряд */
-  }
-}
-.tnb-social-links-1 img {
-  width: 30px; /* Устанавливаем фиксированный размер для иконок */
-  height: auto;
-}
-@media screen and (max-width: 768px) {
-  .tnb-social-links-1 {
-    flex-direction: row; /* Иконки по горизонтали */
-    flex-wrap: nowrap;
-  }
-}
-
 
 .tnb-container {
     background-color: #000; /* Черный фон */
@@ -165,7 +165,10 @@
     position: relative;
     left: -20%;
 }
-
+.tnb-home-hero-float-5 {
+   
+    left: 70%;
+}
 
 html {
   scroll-behavior: smooth;
