@@ -56,7 +56,7 @@ z-index: 0; /* Ставим видео на задний план */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px; /* Расстояние между иконками */
+  gap: 5px; /* Расстояние между иконками */
 }
 
 .tnb-footer-social-link img {
