@@ -123,11 +123,23 @@ z-index: 0; /* Ставим видео на задний план */
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Убираем перенос на новую строку */
   justify-content: center;
   gap: 5px; /* Расстояние между иконками */
   z-index: 1000;
 }
+@media screen and (max-width: 768px) {
+  .tnb-social-links-1 {
+    flex-wrap: nowrap; /* Отключаем перенос на новую строку, иконки должны быть в ряд */
+  }
+}
+@media screen and (max-width: 768px) {
+  .tnb-social-links-1 {
+    flex-direction: row; /* Иконки по горизонтали */
+    flex-wrap: nowrap;
+  }
+}
+
 
 .tnb-container {
     background-color: #000; /* Черный фон */
