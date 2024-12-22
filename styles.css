@@ -1,57 +1,20 @@
-.fire-text-wrapper {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  margin: 0 20px; /* Добавляем отступ по горизонтали между элементами */
+<style>
+/* Основные стили */
+.tnb-container {
+    background-color: #000; /* Черный фон */
+    color: #fff; /* Белый текст для контраста */
 }
 
-.fire-text {
-  font-size: 0.8rem; /* Подберите нужный размер шрифта */
-  color: white;
-  text-decoration: none; /* Убираем подчеркивание у ссылки */
-  transition: all 0.3s ease; /* Добавляем эффект при наведении */
-  display: inline-block; /* Отображаем как inline-block */
+.tnb-section.tnb-top {
+    background-color: black;
+    color: white;
 }
 
-.fire-svg {
-  position: absolute;
-  top: -50px; /* Поднимаем огонь вверх - убедитесь, что добавили единицу измерения */
-  left: 0%;
-  z-index: 999;
-  transform: translateX(-40%); /* Центрируем огонь по горизонтали */
-  width: 700%;
-  height: 700%;
-  pointer-events: none; /* Огонь не мешает клику по ссылке */
-  opacity: 0; /* Изначально невидим */
-  transition: opacity 0.3s ease;
-}
-
-.fire-text-wrapper:hover .fire-svg {
-  opacity: 1; /* При наведении делаем огонь видимым */
-}
-
-.svg-wrapper {
-  display: inline-block;
-  margin-left: 10px; /* Смещение SVG вправо */
-}
-
-.tnb-home-hero-float-5 {
-  position: absolute; /* Позиционируем элемент относительно ближайшего родителя с position */
-  top: 100%; /* Выравнивание по вертикали */
-  left: 50%; /* Выравнивание по горизонтали */
-  transform: translate(-50%, -50%); /* Центрируем видео относительно своего центра */
-z-index: 0; /* Ставим видео на задний план */
-  width: 20vw; /* Ширина, чтобы охватить весь экран */
-  height: 30vh; /* Высота, чтобы охватить весь экран */
-  object-fit: cover; /* Масштабируем видео, чтобы покрыть весь экран, сохраняя пропорции */
-}
-
-
-
+/* Стили для социальных иконок */
 .tnb-social-links {
   position: absolute;
   top: 90%;
-  
+  left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-wrap: wrap;
@@ -60,11 +23,12 @@ z-index: 0; /* Ставим видео на задний план */
 }
 
 .tnb-footer-social-link img {
-  width: 150px; /* Задаем начальный размер иконки */
-  height: 60px;
+  width: 30px; /* Задаем начальный размер иконки */
+  height: 30px;
   transition: all 0.3s ease; /* Плавный переход при изменении размера */
 }
 
+/* Мобильные стили */
 @media (max-width: 768px) {
   .tnb-footer-social-link img {
     width: 20px; /* Уменьшаем иконки на планшетах */
@@ -74,49 +38,62 @@ z-index: 0; /* Ставим видео на задний план */
   .tnb-home-hero-float-5 {
     width: 10vw; /* Уменьшаем ширину видео на планшетах */
   }
-}
 
- .tnb-home-hero-float-6 {
+  .tnb-home-hero-float-6 {
     width: 30vw; /* Уменьшаем ширину видео на планшетах */
   }
 }
 
 @media (max-width: 480px) {
   .tnb-footer-social-link img {
-    width: 10px; /* Еще уменьшаем иконки для смартфонов */
-    height: 10px;
+    width: 15px; /* Еще уменьшаем иконки для смартфонов */
+    height: 15px;
   }
 
   .tnb-home-hero-float-5 {
     width: 2vw; /* Уменьшаем ширину видео на смартфонах */
   }
+
+  .tnb-home-hero-float-6 {
+    width: 20vw; /* Уменьшаем ширину видео на смартфонах */
+  }
+}
+
+/* Анимация */
+.tnb-simple-reveal {
+  opacity: 0; /* Начальное состояние - невидимый элемент */
+  animation: fadeIn 1s ease-in-out 2s forwards; /* 1s - длительность анимации, 2s - задержка */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Видео */
+.tnb-home-hero-float-5 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1000;
+  width: 20vw;
+  height: 30vh;
+  object-fit: cover;
 }
 
 .tnb-home-hero-float-6 {
-    top: 5%; /* Выравнивание по вертикали */
-    left: 50%; /* Выравнивание по горизонтали */
-    width: 20vw; /* Уменьшаем ширину видео на смартфонах */
-    height: 30vh; /* Высота, чтобы охватить весь экран */
-    object-fit: cover; /* Масштабируем видео, чтобы покрыть весь экран, сохраняя пропорции */
-    z-index: -1000; /* Ставим видео на задний план */
-  }
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 20vw;
+  height: 30vh;
+  object-fit: cover;
+  z-index: -1000;
 }
 
-
-
-<style>
-  .tnb-simple-reveal {
-    opacity: -1; /* Начальное состояние - невидимый элемент */
-    animation: fadeIn 1s ease-in-out 2s forwards; /* 1s - длительность анимации, 2s - задержка */
-  }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-
-
+/* Стили для обертки социальных иконок */
 .tnb-social-links-1 {
   position: absolute;
   top: -2%;
@@ -125,59 +102,36 @@ z-index: 0; /* Ставим видео на задний план */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 5px; /* Расстояние между иконками */
+  gap: 5px;
   z-index: 1000;
 }
 
-.tnb-container {
-    background-color: #000; /* Черный фон */
-    color: #fff; /* Белый текст для контраста */
+.tnb-footer-social-link-1 img {
+  width: 30px; /* Задаем начальный размер иконки */
+  height: 30px;
+  transition: all 0.3s ease; /* Плавный переход при изменении размера */
 }
 
-.tnb-section.tnb-top {
-  background-color: black;
-  color: white;
-}
+/* Мобильные стили */
+@media (max-width: 768px) {
+  .tnb-footer-social-link-1 img {
+    width: 10px; /* Уменьшаем иконки на планшетах */
+    height: 10px;
+  }
 
-.tnb-nav {
-  background-color: black;
-  transform: scaleX(1.01) scaleY(1.05); /* Увеличиваем ширину и высоту */
-  transform-origin: right top; /* Растягиваем от правого верхнего угла */
-}
+ 
 
-
-
-
-
-
-#tnb-video-view {
-    max-width: 100%; /* Устанавливаем максимальную ширину 100% */
-    max-height: 80vh; /* Ограничиваем высоту видео до 80% от высоты экрана */
-    object-fit: contain; /* Подстраиваем видео под размер экрана */
-}
-
-.tnb-nav-left {
-    position: relative;
-    left: 16%;
-}
-
-.tnb-nav-content {
-    position: relative;
-    left: -20%;
-}
-.tnb-home-hero-float-5 {
-   
-    left: 70%;
-}
+@media (max-width: 480px) {
+  .tnb-footer-social-link-1 img {
+    width: 5px; /* Еще уменьшаем иконки для смартфонов */
+    height: 5px;
+  }
 
 html {
   scroll-behavior: smooth;
 }
-
-
-
 </style>
 
-<div data-is-ix2-target="1" class="tnb-simple-reveal" style="transform: translate3d(0em, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+<div data-is-ix2-target="1" class="tnb-simple-reveal">
   <img src="https://media.githubusercontent.com/media/Sijic/sijicbond/master/sijicbond.png" alt="sijicbond" width="40" height="40" style="width: 100%; height: 100%;">
 </div>
