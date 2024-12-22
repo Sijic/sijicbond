@@ -35,23 +35,33 @@
   margin-left: 10px; /* Смещение SVG вправо */
 }
 
-.tnb-home-hero-float-5 {
-  position: absolute; /* Позиционируем элемент относительно ближайшего родителя с position */
-  top: 100%; /* Выравнивание по вертикали */
-  left: 50%; /* Выравнивание по горизонтали */
-  transform: translate(-50%, -50%); /* Центрируем видео относительно своего центра */
-z-index: 0; /* Ставим видео на задний план */
-  width: 20vw; /* Ширина, чтобы охватить весь экран */
-  height: 30vh; /* Высота, чтобы охватить весь экран */
-  object-fit: cover; /* Масштабируем видео, чтобы покрыть весь экран, сохраняя пропорции */
+
+
+
+.tnb-social-links {
+  position: absolute;
+  top: 90%;
+  
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Расстояние между иконками */
 }
 
+.tnb-footer-social-link img {
+  width: 20px; /* Задаем начальный размер иконки */
+  height: 20px;
+  transition: all 0.3s ease; /* Плавный переход при изменении размера */
+}
 
-
-  .tnb-home-hero-float-5 {
-    width: 10vw; /* Уменьшаем ширину видео на планшетах */
+@media (max-width: 768px) {
+  .tnb-footer-social-link img {
+    width: 10px; /* Уменьшаем иконки на планшетах */
+    height: 10px;
   }
-}
+
+ 
 
  .tnb-home-hero-float-6 {
     width: 30vw; /* Уменьшаем ширину видео на планшетах */
@@ -64,10 +74,7 @@ z-index: 0; /* Ставим видео на задний план */
     height: 1px;
   }
 
-  .tnb-home-hero-float-5 {
-    width: 2vw; /* Уменьшаем ширину видео на смартфонах */
-  }
-}
+ 
 
 .tnb-home-hero-float-6 {
     top: 5%; /* Выравнивание по вертикали */
@@ -103,12 +110,16 @@ z-index: 0; /* Ставим видео на задний план */
   flex-wrap: nowrap; /* Убираем перенос на новую строку */
   justify-content: center;
   gap: 5px; /* Расстояние между иконками */
-  z-index: 20011;
+  z-index: 1000;
 }
 @media screen and (max-width: 768px) {
   .tnb-social-links-1 {
     flex-wrap: nowrap; /* Отключаем перенос на новую строку, иконки должны быть в ряд */
   }
+}
+.tnb-social-links-1 img {
+  width: 30px; /* Устанавливаем фиксированный размер для иконок */
+  height: auto;
 }
 @media screen and (max-width: 768px) {
   .tnb-social-links-1 {
@@ -154,10 +165,7 @@ z-index: 0; /* Ставим видео на задний план */
     position: relative;
     left: -20%;
 }
-.tnb-home-hero-float-5 {
-   
-    left: 70%;
-}
+
 
 html {
   scroll-behavior: smooth;
