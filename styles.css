@@ -60,8 +60,8 @@ z-index: 0; /* Ставим видео на задний план */
 }
 
 .tnb-footer-social-link img {
-  width: 50px; /* Задаем начальный размер иконки */
-  height: 50px;
+  width: 30px; /* Задаем начальный размер иконки */
+  height: 30px;
   transition: all 0.3s ease; /* Плавный переход при изменении размера */
 }
 
