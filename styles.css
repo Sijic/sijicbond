@@ -48,29 +48,6 @@ z-index: 0; /* Ставим видео на задний план */
 
 
 
-.tnb-social-links {
-  position: absolute;
-  top: 90%;
-  
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px; /* Расстояние между иконками */
-}
-
-.tnb-footer-social-link img {
-  width: 20px; /* Задаем начальный размер иконки */
-  height: 20px;
-  transition: all 0.3s ease; /* Плавный переход при изменении размера */
-}
-
-@media (max-width: 768px) {
-  .tnb-footer-social-link img {
-    width: 10px; /* Уменьшаем иконки на планшетах */
-    height: 10px;
-  }
-
   .tnb-home-hero-float-5 {
     width: 10vw; /* Уменьшаем ширину видео на планшетах */
   }
