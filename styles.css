@@ -60,15 +60,15 @@ z-index: 0; /* Ставим видео на задний план */
 }
 
 .tnb-footer-social-link img {
-  width: 20px; /* Задаем начальный размер иконки */
-  height: 20px;
+  width: 150px; /* Задаем начальный размер иконки */
+  height: 60px;
   transition: all 0.3s ease; /* Плавный переход при изменении размера */
 }
 
 @media (max-width: 768px) {
   .tnb-footer-social-link img {
-    width: 10px; /* Уменьшаем иконки на планшетах */
-    height: 10px;
+    width: 20px; /* Уменьшаем иконки на планшетах */
+    height: 20px;
   }
 
   .tnb-home-hero-float-5 {
@@ -83,8 +83,8 @@ z-index: 0; /* Ставим видео на задний план */
 
 @media (max-width: 480px) {
   .tnb-footer-social-link img {
-    width: 1px; /* Еще уменьшаем иконки для смартфонов */
-    height: 1px;
+    width: 10px; /* Еще уменьшаем иконки для смартфонов */
+    height: 10px;
   }
 
   .tnb-home-hero-float-5 {
