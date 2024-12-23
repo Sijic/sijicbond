@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка и отображение текста из Word</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script> <!-- Подключаем библиотеку mammoth.js -->
+</head>
+<body>
+    <h1>Загрузите свой документ Word</h1>
+
+    <!-- Инпут для загрузки файла -->
+    <input type="file" id="upload" accept=".docx" />
+
+    <!-- Здесь будет отображаться извлечённый текст -->
+    <div id="output"></div>
+
+    <script>
+        // Слушаем событие изменения файла
+        document.getElementById('upload').addEventListener('change', function(event) {
+            var reader = new FileReader();  // Создаём объект FileReader для чтения файла
+            
+            // Когда файл загружен
+            reader.onload = function(e) {
+                var arrayBuffer = e.target.result;  // Получаем результат чтения файла
+
+                // Используем библиотеку Mammoth для конвертации в HTML
+                mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
+                    .then(function(result) {
+                        document.getElementById('output').innerHTML = result.value;  // Выводим результат в div#output
+                    })
+                    .catch(function(err) {
+                        console.error(err);  // Обработка ошибок
+                    });
+            };
+
+            reader.readAsArrayBuffer(this.files[0]);  // Читаем выбранный файл как ArrayBuffer
+        });
+    </script>
+	    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center; /* Центрируем блок по горизонтали */
+            align-items: flex-start; /* Центрируем по вертикали сверху */
+            height: 100vh; /* Задаем высоту экрана */
+            margin: 0; /* Убираем отступы */
+            background-color: #f5f5f5; /* Цвет фона */
+        }
+
+        .content {
+            text-align: center; /* Выравнивание текста по левому краю */
+            width: 80%; /* Ширина блока */
+            max-width: 1200px; /* Максимальная ширина */
+            padding: 50px; /* Отступы внутри */
+            background-color: #fff; /* Белый фон */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень */
+            border-radius: 8px; /* Скругление углов */
+            min-height: 100vh; /* Минимальная высота - высота экрана */
+            margin-top: 0; /* Отступ сверху */
+            margin-bottom: 0; /* Убираем отступ снизу */
+        }
+    </style>
+</body>
+</html>
