@@ -134,30 +134,40 @@ data-spline-url="https://prod.spline.design/V9qy2IIeSniErQ5T/scene.splinecode">
 <script>
   // Функция для открытия модального окна
   function playVideo() {
-    var videoModal = document.getElementById('videoModal');
-    var video = document.getElementById('videoPlayer');
+  var videoModal = document.getElementById('videoModal');
+  var video = document.getElementById('videoPlayer');
 
-    if (videoModal && video) {
-        videoModal.style.display = 'flex';  // Показываем модальное окно
-        video.play();  // Запускаем видео
-        video.muted = true;  // Убираем звук при запуске видео
+  if (videoModal && video) {
+    videoModal.style.display = 'flex'; // Показываем модальное окно
+    video.play(); // Запускаем видео
+    video.muted = true; // Убираем звук при запуске видео
+
+    // Адаптируем размеры видео для мобильных устройств
+    if (window.innerWidth <= 768) {
+      video.style.width = '100%'; // Устанавливаем ширину на 100% экрана
+      video.style.height = 'auto'; // Высота рассчитывается автоматически
     } else {
-        console.error('Ошибка: Видео или модальное окно не найдено.');
+      video.style.width = '80%'; // Для десктопов ширина 80%
+      video.style.height = 'auto'; // Высота рассчитывается автоматически
     }
+  } else {
+    console.error('Ошибка: Видео или модальное окно не найдено.');
+  }
 }
 
 function closeVideo() {
-    var videoModal = document.getElementById('videoModal');
-    var video = document.getElementById('videoPlayer');
+  var videoModal = document.getElementById('videoModal');
+  var video = document.getElementById('videoPlayer');
 
-    if (videoModal && video) {
-        videoModal.style.display = 'none';  // Скрываем модальное окно
-        video.pause();  // Ставим видео на паузу, но не сбрасываем
-        video.currentTime = 0;  // При необходимости сбросить время (если требуется)
-    } else {
-        console.error('Ошибка: Видео или модальное окно не найдено.');
-    }
+  if (videoModal && video) {
+    videoModal.style.display = 'none'; // Скрываем модальное окно
+    video.pause(); // Ставим видео на паузу
+    video.currentTime = 0; // Сбрасываем время
+  } else {
+    console.error('Ошибка: Видео или модальное окно не найдено.');
+  }
 }
+
 
 </script>
 
@@ -171,7 +181,7 @@ function closeVideo() {
     </div>
   </div>
   <div class="tnb-product-button-wrap _2-buttons">
-   <div class="button-fill"><a data-w-id="1ae62924-7cb5-5582-a8fe-ec935a57f5d7" href="" class="tnb-button-medium w-inline-block" target="_blank">
+   <div class="button-fill"><a data-w-id="1ae62924-7cb5-5582-a8fe-ec935a57f5d7"  class="tnb-button-medium w-inline-block" target="_blank">
 <div class="tnb-button-content static"><div class="tnb-link-text no-hover">PRESENTATION<br>COMING SOON</div></div>
 <div class="tnb-button-content dynamic"><div class="tnb-link-text no-hover">PRESENTATION<br>COMING SOON</div></div></a></div>
 <div class="button-fill">
