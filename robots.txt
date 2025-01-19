@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /old/
-Disallow: /early-access
+Disallow: /admin/
+Disallow: /private/
 
-Sitemap: https://www.sijicbond.site/sitemap.xml
+Sitemap: https:/sijicbond.site/sitemap.xml
