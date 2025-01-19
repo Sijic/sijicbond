@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /old/
 Disallow: /early-access
 
-Sitemap: https://www.topazlabs.com/sitemap.xml
+Sitemap: https://www.sijicbond.site/sitemap.xml
