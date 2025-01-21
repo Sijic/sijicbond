@@ -1,0 +1,30 @@
+name: Build and Cache
+
+on:
+  push:
+    branches:
+      - master  # Убедитесь, что имя ветки совпадает с вашей (чаще всего это "main").
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up caching
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            .next/cache
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
