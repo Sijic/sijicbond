@@ -1,0 +1,24 @@
+{
+  "name": "sijicbond",
+  "version": "1.0.0",
+  "description": "Personal website for sijicbond",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sijic/sijicbond.git"
+  },
+  "keywords": [
+    "website",
+    "portfolio",
+    "sijicbond"
+  ],
+  "author": "sijicbond",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sijic/sijicbond/issues"
+  },
+  "homepage": "https://github.com/Sijic/sijicbond#readme"
+}
