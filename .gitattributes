@@ -5,16 +5,16 @@
 # *.bmp filter=lfs diff=lfs merge=lfs -text
 # *.tiff filter=lfs diff=lfs merge=lfs -text
 # *.webp filter=lfs diff=lfs merge=lfs -text
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-*.mov filter=lfs diff=lfs merge=lfs -text
-*.avi filter=lfs diff=lfs merge=lfs -text
-*.mkv filter=lfs diff=lfs merge=lfs -text
-*.flv filter=lfs diff=lfs merge=lfs -text
-*.webm filter=lfs diff=lfs merge=lfs -text
-*.mpg filter=lfs diff=lfs merge=lfs -text
-*.mpeg filter=lfs diff=lfs merge=lfs -text
-*.ogv filter=lfs diff=lfs merge=lfs -text
-*.3gp filter=lfs diff=lfs merge=lfs -text
+#.mp4 filter=lfs diff=lfs merge=lfs -text
+#.mov filter=lfs diff=lfs merge=lfs -text
+#.avi filter=lfs diff=lfs merge=lfs -text
+#.mkv filter=lfs diff=lfs merge=lfs -text
+#.flv filter=lfs diff=lfs merge=lfs -text
+#.webm filter=lfs diff=lfs merge=lfs -text
+#.mpg filter=lfs diff=lfs merge=lfs -text
+#.mpeg filter=lfs diff=lfs merge=lfs -text
+#.ogv filter=lfs diff=lfs merge=lfs -text
+#.3gp filter=lfs diff=lfs merge=lfs -text
 # *.mp3 filter=lfs diff=lfs merge=lfs -text
 # *.wav filter=lfs diff=lfs merge=lfs -text
 # *.flac filter=lfs diff=lfs merge=lfs -text
