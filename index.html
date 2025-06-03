@@ -48,6 +48,32 @@
   	.b2-twenty-selector-container > .w-slider-dot.w-active {border: 2px solid white;background-color: transparent;box-sizing: border-box;}.b2-twenty-selector-container > .w-slider-dot{background-color: transparent;transition: border .5s ease-in-out;border-color: transparent;}.b2-twenty-selector-container > .w-slider-dot:focus {outline: none;box-shadow: unset;}
   	.b2-dark-bg-g{background: linear-gradient(180deg, rgba(15, 15, 56, 0) 0%, rgba(15, 15, 56, 0.2) 45.83%, rgba(15, 15, 56, 0) 100%)!important}
   .fancybox-active .fancybox-content { border-radius: 12px; overflow: hidden!important;}
+
+	.tnb-feature-logo-wrap.marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 2rem 0;
+    }
+
+    .tnb-feature-logo-wrap.marquee .marquee-content {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 30s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .tnb-feature-logo-wrap.marquee img {
+      height: 60px;
+      margin: 0 1rem;
+      vertical-align: middle;
+    }
 </style>
 
 
@@ -326,45 +352,32 @@ document.addEventListener('DOMContentLoaded', function () {
     <!-- Правая колонка — встроенное резюме Canva -->
     <div style="flex: 1; min-width: 300px;">
       <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
-      padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
-      border-radius: 8px; will-change: transform;">
+        padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+        border-radius: 8px; will-change: transform;">
         <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
           src="https://www.canva.com/design/DAGpSduhop4/HQfYOfEE2LGzI8KtEAy7RA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
         </iframe>
       </div>
     </div>
-
   </div>
 </div>
 
-<div class="tnb-feature-logo-wrap">
-<img src="123.png" loading="lazy" alt="123" class="tnb-feature-logo"/>
-<img src="not.png" loading="lazy" alt="not pro craft" class="tnb-feature-logo"/>
-<img src="Qazaqfilm_logo-removebg-preview.png" loading="lazy" alt="kazakhfilm" class="tnb-feature-logo"/>
-<img src="8&1.png" loading="lazy" alt="8&1" class="tnb-feature-logo"/>
-<img src="free.png" loading="lazy" alt="free mind asia" class="tnb-feature-logo"/>
-<img src="acs.png" loading="lazy" alt="ACS" class="tnb-feature-logo"/>
-<img src="ec.png" loading="lazy" alt="epicentrum" class="tnb-feature-logo"/>
-<img src="airbafresh.png" loading="lazy" alt="airbafresh" class="tnb-feature-logo"/>
-<img src="techno.png" loading="lazy" alt="technodom" class="tnb-feature-logo"/>
-<img src="qara.png" loading="lazy" alt="qara" class="tnb-feature-logo"/>
-<img src="2d-logo.png" loading="lazy" alt="2d" class="tnb-feature-logo"/>
-<img src="bmg.png" loading="lazy" alt="bsg" class="tnb-feature-logo"/>
-</div>
-<div class="tnb-feature-logo-wrap">
-<img src="123.png" loading="lazy" alt="SERGEY BONDAREV" class="tnb-feature-logo"/>
-<img src="not.png" loading="lazy" alt="SERGEY BONDAREV" class="tnb-feature-logo"/>
-<img src="Qazaqfilm_logo-removebg-preview.png" loading="lazy" alt="SERGEY BONDAREV" class="tnb-feature-logo"/>
-<img src="8&1.png" loading="lazy" alt="SERGEY BONDAREV" class="tnb-feature-logo"/>
-<img src="free.png" loading="lazy" alt="SERGEY BONDAREV" class="tnb-feature-logo"/>
-<img src="acs.png" loading="lazy" alt="SERGEY BONDAREV" class="tnb-feature-logo"/>
-<img src="ec.png" loading="lazy" alt="SERGEY BONDAREV" class="tnb-feature-logo"/>
-<img src="airbafresh.png" loading="lazy" alt="SERGEY BONDAREV" class="tnb-feature-logo"/>
-<img src="techno.png" loading="lazy" alt="SERGEY BONDAREV" class="tnb-feature-logo"/>
-<img src="qara.png" loading="lazy" alt="SERGEY BONDAREV" class="tnb-feature-logo"/>
-<img src="2d-logo.png" loading="lazy" alt="SERGEY BONDAREV" class="tnb-feature-logo"/>
-<img src="bmg.png" loading="lazy" alt="SERGEY BONDAREV" class="tnb-feature-logo"/>
-</div>
+<!-- Бегущая строка логотипов -->
+<div class="tnb-feature-logo-wrap marquee">
+  <div class="marquee-content">
+    <img src="123.png" alt="123" />
+    <img src="not.png" alt="not pro craft" />
+    <img src="Qazaqfilm_logo-removebg-preview.png" alt="kazakhfilm" />
+    <img src="8&1.png" alt="8&1" />
+    <img src="free.png" alt="free mind asia" />
+    <img src="acs.png" alt="ACS" />
+    <img src="ec.png" alt="epicentrum" />
+    <img src="airbafresh.png" alt="airbafresh" />
+    <img src="techno.png" alt="technodom" />
+    <img src="qara.png" alt="qara" />
+    <img src="2d-logo.png" alt="2d" />
+    <img src="bmg.png" alt="bsg" />
+  </div>
 </div>
 <div class="tnb-section">
 <div class="tnb-container tnb-large">
