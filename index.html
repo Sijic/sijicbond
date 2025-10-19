@@ -49,6 +49,63 @@
   	.b2-dark-bg-g{background: linear-gradient(180deg, rgba(15, 15, 56, 0) 0%, rgba(15, 15, 56, 0.2) 45.83%, rgba(15, 15, 56, 0) 100%)!important}
   .fancybox-active .fancybox-content { border-radius: 12px; overflow: hidden!important;}
 
+ 
+
+  /* Эти строки центрируют текст по вертикали */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 2. Обертка для видео. Растягивается на родителя. */
+.background-video-wrapper {
+  position: absolute;
+  top: 180;
+  left: 0;
+  width: 200%;
+  height: 100%; 
+  z-index: 0;
+}
+
+/* 3. Само видео. */
+#background-video {
+  width: 100%;
+  height: 300%;
+  object-fit: cover;
+}
+
+/* 4. Весь контент — поверх видео. */
+.tnb-section.tnb-top > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+  /* --- НОВЫЕ СТИЛИ ДЛЯ КНОПКИ ЗВУКА --- */
+#sound-toggle-button {
+  /* Уменьшаем размер */
+  font-size: 8px; /* Уменьшаем размер шрифта */
+  padding: 8px 15px; /* Уменьшаем внутренние отступы */
+
+  /* Стили для прозрачности */
+  background-color: rgba(0, 0, 0, 1); /* Полупрозрачный фон */
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 1); /* Полупрозрачная рамка */
+  
+  /* Остальные стили */
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: sans-serif;
+  text-transform: uppercase; /* Делаем текст заглавными буквами */
+  letter-spacing: 1px;   /* Немного увеличиваем расстояние между буквами */
+  transition: background-color 0.3s;
+}
+/* Добавляем z-index, чтобы кнопка была на верхнем слое */
+  position: relative; /* z-index работает только с позиционированными элементами */
+  z-index: 10000;
+#sound-toggle-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
 
 </style>
 
@@ -57,6 +114,7 @@
 <link rel="stylesheet" href="https://sijic.github.io/sijicbond/styles.css">
 </head>
 <body class="tnb-body tnb-black">
+
 
 <div class="tnb-video-view">
 <div class="tnb-bkg-overlay modal"></div>
@@ -100,29 +158,69 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </div>
 <div id="video-view-exit-button" data-w-id="a90c544b-c4cd-6d0c-6ac1-ab5241f432b8" class="tnb-exit">
+
+
 <a data-w-id="c906a2ab-fd0f-c608-259b-4a64579703dc" href="/" class="tnb-button-medium w-inline-block">
+
+
+
+
 <div class="tnb-button-content static"><div class="tnb-link-text no-hover">Exit</div></div>
 <div class="tnb-button-content dynamic"><div class="tnb-link-text no-hover">Exit</div>
-</div></a>
 </div>
+
+
+
+</a>
+
+
+
 </div>
+
+
+
 </div>
+
+
+
+</div>
+
+
+
+
 <div class="tnb-nav" style="background-color: black;">
+
+
+
 <div class="tnb-bkg-overlay nav" style="display: none; opacity: 0;"></div>
+
+
+
 <div class="tnb-nav-main">
+
+<div style="text-align: right; width: 100%; position: relative; z-index: 10;">
+    <button id="sound-toggle-button">SOUND</button>
+</div>
+
+
 <div class="tnb-container no-margin tnb-large">
+
+
+
 <div class="tnb-nav-content">
 
 <div class="tnb-nav-left">
-    <video class="tnb-logo-full" autoplay muted loop playsinline style="width: 250px; height: 250px;">
-        <source src="https://sijic.github.io/sijicbond/ArtelcinemA.webm" type="video/webm">
-        Your browser does not support the video tag.
-    </video>
-</div>
+    <a href="#Producer" style="cursor: pointer;">
+        <video class="tnb-logo-full" autoplay muted loop playsinline style="width: 250px; height: 250px; pointer-events: none;">
+            <source src="https://sijic.github.io/sijicbond/ArtelcinemA.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </a>
+    </div>
 
 <div class="tnb-nav-mid-wrap">
 <div class="tnb-nav-mid">
-<a data-w-id="c4cb8b84-6093-3027-b61f-b563f4efe32a" href="Producer.html" class="tnb-link-text" style="display: inline-block; text-align: center; z-index: 999;">1st Assistant Director<br>& PRODUCER</a>
+<a data-w-id="c4cb8b84-6093-3027-b61f-b563f4efe32a" href="Producer.html" class="tnb-link-text" style="display: inline-block; text-align: center; z-index: 999;">PRODUCER<br>& 1st Assistant Director</a>
 <a data-w-id="c4cb8b84-6093-3027-b61f-b563f4efe328" href="PD&ART.html" class="tnb-link-text" style="display: inline-block; text-align: center;">PRODUCTION DESIGNER<br>& ART DEPARTMENT</a>
   <div class="fire-text-wrapper"><a href="Pyro.html" class="fire-text">PYROTECHNICIAN<br>PRODUCER SPFX TEAM</a>
   <div class="fire-svg">
@@ -130,14 +228,47 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
   
 </div>
-<video class="tnb-home-hero-float-5" width="255" autoplay muted loop playsinline>
-    <source src="https://sijic.github.io/sijicbond/REC.webm" type="video/webm">
-    Ваш браузер не поддерживает воспроизведение видео.
-</video>
+
 
 <a href="Projects.html" data-w-id="0f62d60a-3bb4-bcdf-014b-f12f0a0a1a74" class="tnb-link-text" style="display: inline-block; text-align: center;">SHOWRANNER<br>my projects</a></div></div>
 </div></div></div>
-<div class="tnb-social-links" style="position: absolute; top: 5.8%; left: 50%; transform: translate(-50%, -50%); z-index: 20001; display: flex; justify-content: center; align-items: center; gap: 20px;">
+
+
+
+
+<div style="height: 100px; width: 100%;">
+
+  <video id="background-video" autoplay loop muted playsinline poster="sijicbond.png">
+            <source src="background-video.mp4" type="video/mp4">
+            Ваш браузер не поддерживает HTML5 видео.
+        </video>
+<script>
+    // Находим наше видео и кнопку
+    const video = document.getElementById('background-video');
+    const soundButton = document.getElementById('sound-toggle-button');
+
+    // Добавляем обработчик клика по кнопке
+    soundButton.addEventListener('click', function() {
+        // Проверяем, включен ли звук у видео
+        if (video.muted) {
+            // Если был выключен - включаем
+            video.muted = false;
+            soundButton.textContent = 'MUTE';
+        } else {
+            // Если был включен - выключаем
+            video.muted = true;
+            soundButton.textContent = 'SOUND';
+        }
+    });
+</script>
+
+
+
+</div>
+
+ <div class="tnb-social-links" style="position: absolute; top: 0.4%; left: 50%; transform: translate(-50%, -50%); z-index: 20001; display: flex; justify-content: center; align-items: center; gap: 20px;">
+
+
 
     <a href="https://www.kinopoisk.ru/name/10238377/" target="_blank" class="tnb-footer-social-link w-inline-block">
         <img src="director.webp" loading="lazy" alt="" style="height: 30px; width: auto;">
@@ -149,12 +280,15 @@ document.addEventListener('DOMContentLoaded', function () {
         <img src="explosion.webp" loading="lazy" alt="" style="height: 30px; width: auto;">
     </a>
 
-</div>
+</div> 
 
 
 
-<div style="height: 100px; width: 100%;"></div>
 <div class="tnb-section tnb-top">
+
+
+    
+   
 
 <div class="tnb-container text-align-center ">
 <div class="tnb-label tnb-color-blue">Producer. 1st AD. Director. Pyrotechnician and practical special effects production. Production designer.<br>PRODUCER OF VIDEO PRODUCTION SERVICE IN KAZAKHSTAN, UZBEKISTAN, KYRGYZTAN</div>
@@ -237,7 +371,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="tnb-product-cards">
 <div class="tnb-product-card">
   <div class="tnb-product-card-top">
-    <div id="Producer" class="tnb-p-legal no-margin tnb-color-slate" style="color: white; font-size: 1rem; font-weight: bold; text-align: center;">  1st Asist. Director & PRODUCER    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tnb-color-green">↓click↓</span></div>
+    <div id="Producer" class="tnb-p-legal no-margin tnb-color-slate" style="color: white; font-size: 1rem; font-weight: bold; text-align: center;">  PRODUCER & 1st Asist. Director      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tnb-color-green">↓click↓</span></div>
   </div>
   <a href="Producer.html"  class="tnb-product-mid w-inline-block" style="background-image: url('Prod.gif'); background-size: cover; background-position: center center;">
     <div class="tnb-product-card-content">
